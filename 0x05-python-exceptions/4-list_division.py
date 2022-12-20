@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def list_division(my_list_1, my_list_2, list_length):
-    """Divides two list element by element.
+    """Divides two lists element by element.
     Args:
         my_list_1 (list): The first list
         my_list_2 (list): The second list
@@ -15,7 +15,7 @@ def list_division(my_list_1, my_list_2, list_length):
         try:
             res = my_list_1[i] / my_list_2[i]
         except TypeError:
-            print("wrong tpe")
+            print("wrong type")
             res = 0
         except ZeroDivisionError:
             print("division by 0")
@@ -25,4 +25,4 @@ def list_division(my_list_1, my_list_2, list_length):
             res = 0
         finally:
             new_list.append(res)
-    return (new_list)
+    return new_list
