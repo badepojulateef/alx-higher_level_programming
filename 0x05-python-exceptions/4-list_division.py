@@ -8,7 +8,8 @@ def list_division(my_list_1, my_list_2, list_length):
         list_length: The number of elements to divide
     Returns:
         A new list of list length containing all the
-        divisions """
+        divisions.
+    """
     new_list = []
     for i in range(0, list_length):
         try:
