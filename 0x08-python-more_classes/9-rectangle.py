@@ -83,11 +83,10 @@ class Rectangle:
         Args:
              size (int): The width and height of the new Rectangle.
         """
-        if not isinstance(size, int):
+        try:
+            return (cls(size, size))
+        except Exception:
             raise TypeError("width must be an integer")
-        if size < 0:
-            raise ValueError("width must be >= 0")
-        return (cls(size, size))
 
     def __str__(self):
         """ Return the printable representation of the Rectangle.
