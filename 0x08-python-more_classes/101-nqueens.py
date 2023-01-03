@@ -26,7 +26,7 @@ def get_solution(board):
             if board[r][c] == "Q":
                 solution.append([r, c])
                 break
-    return (solutuon)
+    return (solution)
 
 
 def xout(board, row, col):
@@ -120,5 +120,5 @@ if __name__ == "__main__":
 
     board = init_board(int(sys.argv[1]))
     solutions = recursive_solve(board, 0, 0, [])
-    for solution in solutions:
-        print(solution)
+    for sol in solutions:
+        print(sol)
