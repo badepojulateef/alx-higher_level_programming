@@ -20,6 +20,7 @@ Adding one positive and one negative integer (a = 10 and b = -4)
 
 Adding two negative integers (a = -10 and b = -4)
 	>>> add_integer(-10, -4)
+	-14
 
 Adding two integers with the second being the same as the default value of b (a = 2 and b = 98)
     >>> add_integer(2)
