@@ -4,7 +4,7 @@ const arg = parseInt(process.argv[2]);
 
 function fact (n, result = 1) {
   if (Number.isNaN(arg)) {
-    return 1;
+    return result;
   }
   if (n < 2) {
     return result;
