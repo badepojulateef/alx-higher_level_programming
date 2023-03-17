@@ -35,7 +35,8 @@ if __name__ == "__main__":
     """ Fetch all rows using fetchall() method """
     query_rows = cursor.fetchall()
     for row in query_rows:
-        print(row[1])
+        print(row[1], end=",")
+    print()
 
     """ Close the database connection """
     cursor.close()
