@@ -24,11 +24,11 @@ if __name__ == "__main__":
     """ Execute SQL query to fetch states """
     query = """
         SELECT * FROM states
-        WHERE name LIKE BINARY %(name)s
+        WHERE name LIKE BINARY %s
         ORDER BY id ASC
     """
 
-    cursor.execute(query, {'name': f'{search_name}%'})
+    cursor.execute(query, ('{}%'.format(search_name),))
 
     """ Fetch all rows using fetchall() method """
     query_rows = cursor.fetchall()
