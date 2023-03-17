@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     """ Execute SQL query to fetch states """
     query = """
-        SELECT cities.id, cities.name, states.name
+        SELECT cities.name
         FROM cities
         JOIN states ON cities.state_id = states.id
         WHERE states.name LIKE %s
@@ -36,7 +36,7 @@ if __name__ == "__main__":
     query_rows = cursor.fetchall()
     if query_rows is not None:
         for row in query_rows:
-            print(row[1], end=",")
+            print(row[0], end=",")
         print()
 
     """ Close the database connection """
