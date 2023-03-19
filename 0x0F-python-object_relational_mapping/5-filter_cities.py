@@ -27,7 +27,7 @@ if __name__ == "__main__":
         SELECT cities.name
         FROM cities
         JOIN states ON cities.state_id = states.id
-        WHERE states.name = %s
+        WHERE states.name LIKE BINARY %s
         ORDER BY cities.id ASC
     """
     cursor.execute(query, (state_name,))
@@ -35,10 +35,8 @@ if __name__ == "__main__":
     """ Fetch all rows using fetchall() method """
     query_rows = cursor.fetchall()
     if query_rows is not None:
-        for row in query_rows:
-            print(row[0], end=",")
-        print()
-
+        print(", ".join([row[0] for row in query_rows]))
+    
     """ Close the database connection """
     cursor.close()
     conn.close()
