@@ -31,10 +31,16 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Query all State objects from the database and sort them by id
+    # Create a new State object
     new_state = State(name="Louisiana")
+
+    # Add the new State object to the session
     session.add(new_state)
 
+    # Commit the session to the database
+    session.commit()
+
+    # Query all State objects from the database and sort them by id
     state = session.query(State).\
         filter(State.name == new_state.name).first()
 
