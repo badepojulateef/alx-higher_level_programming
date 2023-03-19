@@ -30,11 +30,10 @@ if __name__ == "__main__":
     session = Session()
 
     # Query all State objects from the database and sort them by id
-    states = session.query(State).order_by(State.id)
+    state = session.query(State).order_by(State.id).first()
 
     # Display the results
-    for state in states:
-        print("{}: {}".format(state.id, state.name))
+    print("{}: {}".format(state.id, state.name))
 
     # Close the session
     session.close()
