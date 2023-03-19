@@ -34,7 +34,7 @@ if __name__ == "__main__":
     # Query all State objects from the database and sort them by id
     states_containing_a = session.query(State).\
         filter(State.name.like('%a%')).\
-        order_by(State.id)
+        all()
 
     # Display the results
     if states_containing_a is not None:
