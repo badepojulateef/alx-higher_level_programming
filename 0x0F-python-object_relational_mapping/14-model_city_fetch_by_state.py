@@ -34,9 +34,8 @@ if __name__ == "__main__":
     # Query all State objects from the database and sort them by id
     results = session.query(State, City).join(City).order_by(City.id)
 
-    print(results)
     # Display the results
-    for state, city in results.all():
+    for state, city in results:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
 
     # Close the session
