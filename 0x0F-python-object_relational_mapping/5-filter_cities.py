@@ -36,7 +36,7 @@ if __name__ == "__main__":
     query_rows = cursor.fetchall()
     if query_rows is not None:
         print(", ".join([row[0] for row in query_rows]))
-    
+
     """ Close the database connection """
     cursor.close()
     conn.close()
