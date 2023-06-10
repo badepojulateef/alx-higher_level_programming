@@ -21,10 +21,10 @@ class Rectangle(Base):
             TypeError: If either of x or y is not an int.
             ValueError: If either of x or y < 0.
         """
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
@@ -97,7 +97,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """Return the print() and str() representation of the Rectangle."""
-        return f"[Rectangle]({self.id}) {self.__x}/{self.__y} - \
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
 {self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
