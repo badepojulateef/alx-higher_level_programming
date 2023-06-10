@@ -14,16 +14,14 @@ class Square(Rectangle):
             y (int): The y coordinate of the new Square.
             id (int): The identity of the new Square.
         """
-        self.__size = size
-        self.__x = x
-        self.__y = y
-        self.id = None
+        self.x = x
+        self.y = y
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
         """Get/set the size of the Square."""
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, value):
@@ -32,8 +30,8 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        self.__width = value
-        self.__height = value
+        self.width = value
+        self.height = value
 
     def update(self, *args, **kwargs):
         """Update the Square.
@@ -86,5 +84,5 @@ class Square(Rectangle):
 
     def __str__(self):
         """Return the print() and str() representation of a Square."""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.__x, self.__y,
-                                                 self.__size)
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
+                                                 self.size)
