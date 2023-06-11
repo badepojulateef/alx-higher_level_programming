@@ -106,9 +106,9 @@ class Square(Rectangle):
         """Return the dictionary representation of the Square."""
         return {
             "id": self.id,
-            "size": self.__size,
-            "x": self.__x,
-            "y": self.__y
+            "size": self.size,
+            "x": self.x,
+            "y": self.y
         }
 
     def __str__(self):
