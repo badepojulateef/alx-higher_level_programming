@@ -42,7 +42,7 @@ class Square(Rectangle):
                 - 3rd argument represents x attribute
                 - 4th argument represents y attribute
             **kwargs (dict): New key/value pairs of attributes.
-        """
+
         if args and len(args) != 0:
             a = 0
             for arg in args:
@@ -72,6 +72,35 @@ class Square(Rectangle):
                     self.__x = v
                 elif k == "y":
                     self.__y = v
+
+    """
+
+    def update(self, *args, **kwargs):
+        """
+        Update the Square.
+        Args:
+            *args (ints): New attribute values.
+                - 1st argument represents id attribute
+                - 2nd argument represents size attribute
+                - 3rd argument represents x attribute
+                - 4th argument represents y attribute
+            **kwargs (dict): New key/value pairs of attributes.
+        """
+        attributes = ["id", "size", "x", "y"]
+
+        if args and len(args) > 0:
+            # print(args)
+            # print(attributes)
+            for i in range(len(args)):
+                # print(i, args[i], attributes[i])
+                setattr(self, attributes[i], args[i])
+
+        elif kwargs:
+            for k, v in kwargs.items():
+                for j in attributes:
+                    # print(k, v, j)
+                    if k == j:
+                        setattr(self, k, v)
 
     def to_dictionary(self):
         """Return the dictionary representation of the Square."""
