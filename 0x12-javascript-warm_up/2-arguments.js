@@ -9,6 +9,6 @@ if (noOfArgs === 0) {
   console.log('No argument');
 } else if (noOfArgs === 1) {
   console.log('Argument found');
-} else if (noOfArgs >= 2) {
+} else {
   console.log('Arguments found');
 }
