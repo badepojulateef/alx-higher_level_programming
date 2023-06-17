@@ -45,7 +45,7 @@ if __name__ == "__main__":
     # Query a session factory bound to the engine
     try:
         state = session.query(State).order_by(State.id).first()
-        
+
         # Display the result
         if state is not None:
             print("{}: {}".format(state.id, state.name))
