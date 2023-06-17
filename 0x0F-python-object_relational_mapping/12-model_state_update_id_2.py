@@ -62,6 +62,16 @@ if __name__ == "__main__":
             # Commit the session to the database
             session.commit()
         else:
+            print("Not successful")
+
+        # Query the database with the id = 2
+        states = session.query(State).order_by(State.id)
+
+        # Display the results
+        if states is not None:
+            for state in states:
+                print("{}: {}".format(state.id, state.name))
+        else:
             print("Not found")
 
     # Close the cursor abd database connection
