@@ -55,15 +55,18 @@ if __name__ == "__main__":
 
     # Query all State objects from the database and sort them by id
     try:
+        # Query the database with the id = 2
         state = session.query(State).filter(State.id == 2).first()
 
         # Update the state
         if state is not None:
             state.name = "New Mexico"
-        # Commit the session to the database
-        session.commit()
 
-        # Query the database with the id = 2
+            # Commit the session to the database
+            session.commit()
+
+        session.commit()
+        # Query all State objects from the database and sort them by id
         states = session.query(State).order_by(State.id)
 
         # Display the results
