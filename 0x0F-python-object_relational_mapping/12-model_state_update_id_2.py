@@ -44,16 +44,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Create a new state object
-    new_state = State(name="Louisiana")
-
-    # Add the new state object to the session
-    session.add(new_state)
-
-    # Commit the session to the database
-    session.commit()
-
-    # Query all State objects from the database and sort them by id
     try:
         # Query the database with the id = 2
         state = session.query(State).filter(State.id == 2).first()
