@@ -44,20 +44,20 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    
     try:
-        # Query the database to find the states name containing a 
+        # Query the database to find the states name containing a
         states_containing_a = session.query(State)\
-                .filter(State.name.like("%a%"))
+                .filter(State.name.like("%a%")).all()
         # Update the state
         if states_containing_a is not None:
             for state in states_containing_a:
                 # Delete the state object to be deleted
                 session.delete(state)
-                # Commit the session to the database
-                session.commit()
         else:
             print("Not found")
+
+        # Commit the session to the database
+        session.commit()
 
     # Close the cursor abd database connection
     finally:
