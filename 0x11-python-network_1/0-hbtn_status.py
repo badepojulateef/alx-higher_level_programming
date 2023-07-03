@@ -21,7 +21,7 @@ if __name__ == "__main__":
         """
 
         # Open the URL as a response object
-        with urlopen(open) as res:
+        with urlopen(url) as res:
 
             # Read the contents of the response
             status = re.read()
