@@ -11,7 +11,6 @@ if __name__ == "__main__":
     def getStatus(url):
         """ A function that fetches the content of a url
         and displays its res
-        
 
         Args:
             url (str): The URL to fetch
@@ -23,7 +22,7 @@ if __name__ == "__main__":
 
         # Open the URL as a response object
         with urlopen(open) as res:
-            
+
             # Read the contents of the response
             status = re.read()
 
@@ -33,8 +32,8 @@ if __name__ == "__main__":
             print("\t- content: {}".format(status))
             print("\t- utf8 content: {}".format(status.decode('utf-8')))
 
-        # URL to fetch
-        url = "https://alx-intranet.hbtn.io/status"
+    # URL to fetch
+    url = "https://alx-intranet.hbtn.io/status"
 
-        # Call the getStatus function with the URL
-        getStatus(url)
+    # Call the getStatus function with the URL
+    getStatus(url)
