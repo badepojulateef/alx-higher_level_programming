@@ -18,7 +18,7 @@ import requests
 
 
 if __name__ == "__main__":
-    
+
     def getStatus(url):
         # Make a GET request to the URL using the requests library
         res = requests.get(url)
@@ -27,7 +27,7 @@ if __name__ == "__main__":
         print("Body response:")
         print("\t- type: {}".format(type(res.text)))
         print("\t- content: {}".format(res.text))
-    
+
     # URL to fetch
     url = "https://alx-intranet.hbtn.io/status"
 
