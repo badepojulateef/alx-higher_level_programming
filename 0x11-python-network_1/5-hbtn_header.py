@@ -14,7 +14,7 @@ if __name__ == "__main__":
     url = sys.argv[1]
 
     # Send a GET request to the URL using requests module
-    res = requests..get(url)
+    res = requests.get(url)
 
     # Print the value of the X-Request-Id header in the response
     print(res.headers.get("X-Request-Id"))
