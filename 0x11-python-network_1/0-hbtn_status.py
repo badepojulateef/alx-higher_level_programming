@@ -24,7 +24,7 @@ if __name__ == "__main__":
         with urlopen(url) as res:
 
             # Read the contents of the response
-            status = re.read()
+            status = res.read()
 
             # Display the res
             print("Body response:")
