@@ -1,9 +1,18 @@
 #!/usr/bin/python3
 """
-Sends a request to a given URL and displays the response body.
+Fetches https://alx-intranet.hbtn.io/status.
 
 Usage: ./7-error_code.py <URL>
-  - Handles HTTP errors.
+
+Returns:
+    The body of the response to the request, as a string.
+
+Example:
+    ./7-error_code.py
+
+Features:
+    - Uses the Python requests library to make a GET
+    request to a specified URL.
 """
 
 import sys
