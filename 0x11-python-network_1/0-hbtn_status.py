@@ -1,39 +1,25 @@
 #!/usr/bin/python3
 """
-A script that fetches https://intranet.hbtn.io/status
-using urllib and displays the res body
+A script that Displays the X-Request-Id header var
+of a given req
 """
-
+import sys
+import urllib.request
 
 if __name__ == "__main__":
-    from urllib.request import urlopen
+    if len(sys.argv) != 2:
+        print("Usage: ./1-hbtn_header.py <URL>")
+        sys.exit(1)
 
-    def getStatus(url):
-        """ A function that fetches the content of a url
-        and displays its res
+    url = sys.arv[1]
 
-        Args:
-            url (str): The URL to fetch
+    try:
+        req = urllib.request.Request(url)
+        with urllib.request.urlopen(req) as res:
+            x_request_id = dict(response.headers).get("X-Request-Id")
+            if x_request_id is not None:
+                print(x_request_id)
 
-        Returns:
-            None: The function prints but not returns nothing
-
-        """
-
-        # Open the URL as a response object
-        with urlopen(url) as res:
-
-            # Read the contents of the response
-            status = res.read()
-
-            # Display the res
-            print("Body response:")
-            print("\t- type: {}".format(type(status)))
-            print("\t- content: {}".format(status))
-            print("\t- utf8 content: {}".format(status.decode('utf-8')))
-
-    # URL to fetch
-    url = "https://alx-intranet.hbtn.io/status"
-
-    # Call the getStatus function with the URL
-    getStatus(url)
+    except urllib.error.URLError as e:
+        print("Error opening URL:", e.reason)
+        sys.exit(1)
